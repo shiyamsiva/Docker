@@ -1,11 +1,8 @@
-version: '3'
+version: '3'  
 services:
-  # Frontend
+  web:
     image: nginx:latest
     ports:
-      - "9001:80" #container:actual port number
-    volumes:
-      - nginx-data:/app-data #volume_name:mount_point
-      - nginx-backup:/backup-data #volume_name:mount_point
+     - "8080:80"
 
 
