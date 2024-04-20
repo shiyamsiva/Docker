@@ -1,29 +1,11 @@
 version: '3'
 services:
   # Frontend
-  webserver:
     image: nginx:latest
     ports:
       - "9001:80" #container:actual port number
     volumes:
       - nginx-data:/app-data #volume_name:mount_point
       - nginx-backup:/backup-data #volume_name:mount_point
-   # networks:
-    #  - qtree-network
-  # Database
-  dbserver: #conatiner name
-    image: postgres:latest
-    environment:
-      POSTGRES_DB: mydb
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-    ports:
-      - "5000:5432" #container:actual port number
-    volumes:
-      - pg-data:/var/lib/postgresql/data
-    networks:
-      - qtree-network
-networks:
-  qtree-network: #network to name
-    driver: bridge #network type
+
 
